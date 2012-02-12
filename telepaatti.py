@@ -1735,6 +1735,7 @@ def main():
             nickname = a
 
     service = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    service.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     service.bind(("", port))
     service.listen(1)
 
